@@ -7,25 +7,25 @@ export default function HomePage() {
     {
       title: "Classic Tomato Basil Soup",
       price: 8,
-      image: "/images/soups/tomato-basil-soup.jpg",
+      image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85",
       caption: "Slow-simmered tomatoes, basil, a touch of cream.",
     },
     {
       title: "Creamy Pumpkin Soup",
       price: 9,
-      image: "/images/soups/creamy-pumpkin-soup.jpg",
+      image: "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?auto=format&fit=crop&w=900&q=85",
       caption: "Velvety roasted pumpkin with warm spices.",
     },
     {
       title: "Hearty Ramen Soup",
       price: 12,
-      image: "/images/soups/ramen-soup.jpg",
+      image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=85",
       caption: "Rich broth with noodles and fresh toppings.",
     },
     {
       title: "Minestrone Vegetable Soup",
       price: 10,
-      image: "/images/soups/minestrone-soup.jpg",
+      image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85",
       caption: "Comforting Italian-style veggie and bean soup.",
     },
   ]
@@ -36,8 +36,9 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-16">
         <header className="mx-auto max-w-2xl text-center">
-          <h2 className="font-serif text-3xl">Try Our New Soup Menu</h2>
-          <p className="mt-2 text-muted-foreground">Soul-warming bowls made with seasonal produce and bold flavors.</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand">From the kitchen</p>
+          <h2 className="font-serif text-4xl sm:text-5xl">Small menu.<br /><span className="text-brand italic">Big comfort.</span></h2>
+          <p className="mx-auto mt-4 max-w-lg text-muted-foreground">Soul-warming bowls made with seasonal produce and bold flavors.</p>
         </header>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">

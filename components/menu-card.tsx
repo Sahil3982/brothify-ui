@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 type MenuCardProps = {
@@ -19,10 +18,9 @@ export function MenuCard({ title, price, image, caption, className }: MenuCardPr
     >
       <div className="flex items-start gap-4">
         <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-border/50 shadow-sm">
-          <Image
+          <img
             src={image || "/placeholder.svg"}
             alt={title}
-            fill
             className="object-cover transition-transform duration-500 group-hover:scale-110"
           />
         </div>

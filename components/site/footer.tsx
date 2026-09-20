@@ -1,27 +1,28 @@
 "use client"
 
 import Link from "next/link"
+import { ArrowUpRight, Instagram, Twitter } from "lucide-react"
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/40 bg-card/30 pt-16 pb-8">
+    <footer className="border-t border-border/40 bg-card/50 pt-16 pb-8">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 md:grid-cols-4">
         <div className="md:col-span-1">
-          <Link href="/" className="font-serif text-2xl font-bold tracking-tight">
+          <Link href="/" className="font-serif text-3xl font-bold tracking-tight">
             Brothify
           </Link>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Nourishing souls with fresh, organic soups, shakes, and juices. Crafted with care in Brooklyn.
           </p>
-          <div className="mt-6 flex gap-4">
-            {["twitter", "instagram", "facebook"].map((social) => (
+          <div className="mt-6 flex gap-2">
+            {[Twitter, Instagram].map((SocialIcon) => (
               <a
-                key={social}
-                href={`#${social}`}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-brand hover:text-brand-foreground"
-                aria-label={social}
+                key={SocialIcon.displayName}
+                href="#social"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-muted/50 text-muted-foreground transition-colors hover:bg-brand hover:text-brand-foreground"
+                aria-label="Social media"
               >
-                <div className="h-4 w-4 bg-current" />
+                <SocialIcon className="h-4 w-4" />
               </a>
             ))}
           </div>
@@ -32,8 +33,9 @@ export function SiteFooter() {
           <ul className="space-y-3 text-sm text-muted-foreground">
             {["About Us", "Careers", "Press", "Blog"].map((item) => (
               <li key={item}>
-                <Link href="#" className="hover:text-brand transition-colors">
+                <Link href={`/${item.toLowerCase().replaceAll(" ", "-")}`} className="flex items-center gap-1 hover:text-brand transition-colors">
                   {item}
+                  <ArrowUpRight className="h-3 w-3" />
                 </Link>
               </li>
             ))}
@@ -45,8 +47,9 @@ export function SiteFooter() {
           <ul className="space-y-3 text-sm text-muted-foreground">
             {["Contact", "Terms of Service", "Privacy Policy", "Accessibility"].map((item) => (
               <li key={item}>
-                <Link href="#" className="hover:text-brand transition-colors">
+                <Link href={`/${item.toLowerCase().replaceAll(" ", "-")}`} className="flex items-center gap-1 hover:text-brand transition-colors">
                   {item}
+                  <ArrowUpRight className="h-3 w-3" />
                 </Link>
               </li>
             ))}

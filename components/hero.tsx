@@ -1,68 +1,44 @@
-import Image from "next/image"
 import Link from "next/link"
+import { ArrowRight, Clock3, MapPin } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-10 pb-20 md:pt-16 md:pb-32">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-100/20 via-background to-background dark:from-yellow-900/10"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-green-100/20 via-transparent to-transparent dark:from-green-900/10"
-      />
-
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 md:grid-cols-2">
-        <div className="flex flex-col items-start gap-6 animate-in fade-in slide-in-from-left-6 duration-700 delay-150">
-          <div className="inline-flex items-center rounded-full border border-yellow-200/50 bg-yellow-50/50 px-3 py-1 text-sm font-medium text-yellow-800 backdrop-blur dark:border-yellow-900/50 dark:bg-yellow-900/20 dark:text-yellow-200">
-            <span className="flex h-2 w-2 rounded-full bg-yellow-500 mr-2 animate-pulse" />
-            New Seasonal Menu
-          </div>
-          <h1 className="text-balance font-serif text-5xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Nourishing Soups, <span className="text-brand italic">Made Fresh</span>
+    <section className="relative overflow-hidden px-4 pb-20 pt-8 md:pb-28 md:pt-12">
+      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+        <div className="relative z-10 flex flex-col items-start gap-7 animate-in fade-in slide-in-from-left-6 duration-700">
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-brand"><span className="h-2 w-2 animate-pulse rounded-full bg-brand" /> Brothify kitchen / since 2018</div>
+          <h1 className="max-w-xl text-balance font-serif text-5xl leading-[0.94] tracking-tight text-foreground sm:text-6xl lg:text-8xl">
+            Good food is<br /><span className="text-brand italic">a feeling.</span>
           </h1>
-          <p className="max-w-lg text-pretty text-lg text-muted-foreground md:text-xl">
-            Comfort in every bowl. Explore our chef-crafted soup menu, made with organic ingredients/
-            Craving something cool? Try our fresh shakes and juices.
+          <p className="max-w-md text-pretty text-base leading-7 text-muted-foreground md:text-lg">
+            Slow-simmered comfort, bright seasonal plates, and the kind of welcome that makes you stay for one more spoonful.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3">
             <Link
               href="/menu"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-brand px-8 font-medium text-brand-foreground shadow-lg shadow-brand/20 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand px-7 font-medium text-brand-foreground shadow-lg shadow-brand/20 transition-all hover:gap-3 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
             >
-              Explore Menu
+              Explore the menu <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/reservation"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-input bg-background/50 px-8 font-medium shadow-sm backdrop-blur transition-all hover:bg-accent hover:text-accent-foreground hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-background/50 px-7 font-medium shadow-sm backdrop-blur transition-all hover:border-brand hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               Book a Table
             </Link>
           </div>
         </div>
 
-        <div className="relative isolate animate-in fade-in zoom-in-95 duration-700 delay-300">
-          <div className="absolute -inset-4 -z-10 rounded-full bg-gradient-to-tr from-yellow-200/40 to-green-200/40 opacity-70 blur-3xl dark:from-yellow-900/20 dark:to-green-900/20" />
-          <Image
-            src="/images/hero/young-girl-soups.jpg"
-            width={840}
-            height={840}
-            alt="Young girl enjoying fresh soups"
-            className="w-full rotate-3 rounded-2xl border-8 border-background/50 object-cover shadow-2xl backdrop-blur-sm transition-transform duration-500 hover:rotate-0 hover:scale-[1.02]"
-            priority
+        <div className="relative isolate min-h-[470px] animate-in fade-in zoom-in-95 duration-700 lg:min-h-[600px]">
+          <div className="absolute inset-5 -z-10 rounded-[2rem] bg-brand/10 blur-3xl" />
+          <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=90"
+            alt="A warm bowl of soup with herbs and fresh ingredients"
+            className="h-[470px] w-full rounded-[2rem] object-cover shadow-2xl shadow-black/30 lg:h-[600px]"
           />
-          {/* Decorative floating elements */}
-          <div className="absolute -bottom-8 -left-8 animate-float delay-700 rounded-xl bg-card/80 p-4 shadow-xl backdrop-blur border border-border/50 hidden md:block">
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                🌿
-              </div>
-              <div>
-                <p className="text-sm font-semibold">100% Organic</p>
-                <p className="text-xs text-muted-foreground">Locally sourced</p>
-              </div>
-            </div>
+          <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/20 bg-black/45 p-4 text-white backdrop-blur-md sm:bottom-8 sm:left-8 sm:right-8">
+            <div><p className="text-xs uppercase tracking-[0.22em] text-white/60">Tonight's comfort</p><p className="mt-1 font-serif text-xl">Roasted tomato & basil</p></div>
+            <div className="flex gap-4 text-xs text-white/70"><span className="flex items-center gap-1"><Clock3 className="h-3.5 w-3.5" /> 20 min</span><span className="flex items-center gap-1"><MapPin className="h-3.5 w-3.5" /> Brooklyn</span></div>
           </div>
         </div>
       </div>
