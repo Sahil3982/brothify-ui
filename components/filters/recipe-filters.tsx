@@ -45,7 +45,7 @@ export function RecipeFilters({ recipes }: { recipes: Recipe[] }) {
   const [cat, setCat] = useState("All")
   const [vegan, setVegan] = useState(false)
   const [spicy, setSpicy] = useState(false)
-  const [maxPrice, setMaxPrice] = useState(40)
+  const [maxPrice, setMaxPrice] = useState(100)
 
   const filtered = recipes.filter((r) => {
     const matchQ = r.title.toLowerCase().includes(query.toLowerCase())
@@ -55,6 +55,9 @@ export function RecipeFilters({ recipes }: { recipes: Recipe[] }) {
     const matchP = r.price <= maxPrice
     return matchQ && matchC && matchV && matchS && matchP
   })
+
+  console.log("okk",filtered,recipes);
+  
 
   return (
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -120,7 +123,7 @@ export function RecipeFilters({ recipes }: { recipes: Recipe[] }) {
               id="price"
               type="range"
               min={5}
-              max={50}
+              max={100}
               value={maxPrice}
               onChange={(e) => setMaxPrice(Number(e.target.value))}
               className="mt-2 w-full accent-brand"
